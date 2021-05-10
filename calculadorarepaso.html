@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+    
+    body{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    hr{
+        margin-bottom:50px;
+        box-shadow: 2;
+    }
+
+    #calculadora{
+            padding:20px;
+            background-color: rgb(102, 102, 243);
+            width:200px;
+            height:350px;
+            display:block;
+            margin:auto;
+            border-radius:10px;
+            text-align: center;
+        }
+    input{
+        margin-bottom: 10px;
+    }
+
+    #botones{
+        margin:10px;
+        width:40px;
+        height:100px;
+        display:grid;
+    }
+
+    button{
+       
+    }
+    </style>
+</head>
+<body>
+
+<h1>Calculadora</h1>
+<hr>
+
+    <div id="calculadora">
+        <input type="text" id="numero1" placeholder="0">
+        <input type="text" id="numero2" placeholder="0">
+
+        <div id="botones">
+            <button type="button" id="suma" onclick= "operar(1)">+</button>
+            <button type="button" id="resta"onclick= "operar(2)">-</button>
+            <button type="button" id="multiplicacion" onclick="operar(3)">*</button>
+            <button type="button" id="division"onclick= "operar(4)">%</button>
+        </div>
+
+        <p id="resultado"></p>
+    </div>
+ 
+
+    <script src="calculadora.js"></script>
+</body>
+</html>
