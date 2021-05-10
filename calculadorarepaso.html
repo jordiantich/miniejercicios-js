@@ -65,7 +65,7 @@
         margin-bottom:50px;
         box-shadow: 0px 1px 8px rgba(226, 226, 226, 0.6);
         width:100%;
-        font-size: 30px;
+        font-size: 35px;
         padding:20px;
         color:white;
         text-transform: uppercase;
@@ -152,9 +152,15 @@
         border: 0px;
     }
 
+    #result{
+        padding-top: 20px;
+        font-size: 15px;
+    }
+
     #resultado{
-        padding-top: 50px;
-        font-size: 20px;
+        margin-top:10px;
+        font-size: 25px;
+
     }
 
     #suma:hover, #resta:hover, #division:hover, #multiplicacion:hover, #reset:hover, #igual:hover{
@@ -185,7 +191,11 @@
 
         <hr>
 
-        <p id="resultado"></p>
+        <div id="result">
+            <p>El resultado es:</p>
+            <p id="resultado"></p>
+        </div>
+
     </div>
  
 

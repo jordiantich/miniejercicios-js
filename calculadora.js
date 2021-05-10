@@ -28,7 +28,7 @@ function operar(operacion){
             segundonum = 0;
             break;
         case 6:
-            document.getElementById("resultado").innerHTML= "El resultado es: "+ result; 
+            document.getElementById("resultado").innerHTML= result; 
             break;
     }
 
