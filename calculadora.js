@@ -21,11 +21,18 @@ function operar(operacion){
             result = primernum * segundonum;
             break;
         case 4:
-            result = priemrnum / segundonum;
+            result = primernum / segundonum;
+            break;
+        case 5:
+            primernum = 0;
+            segundonum = 0;
+            break;
+        case 6:
+            document.getElementById("resultado").innerHTML= "El resultado es: "+ result; 
             break;
     }
 
-    document.getElementById("resultado").innerHTML= "El resultado es: "+ result; 
+    
 }
 
 
