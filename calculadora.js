@@ -13,15 +13,19 @@ function operar(operacion){
     switch(operacion){
         case 1:
             result = primernum + segundonum;
+            document.getElementById("operacion").innerHTML= "+";
             break;
         case 2:
             result = primernum - segundonum;
+            document.getElementById("operacion").innerHTML= "-";
             break;
         case 3:
             result = primernum * segundonum;
+            document.getElementById("operacion").innerHTML= "*";
             break;
         case 4:
             result = primernum / segundonum;
+            document.getElementById("operacion").innerHTML= "/";
             break;
         case 5:
             primernum = 0;

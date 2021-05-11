@@ -72,16 +72,60 @@
 
     }
 
+    #container{
+        display:flex;
+        justify-content: center;
+       
+    }
+
     #calculadora{
             padding:20px;
             background-color: rgb(255, 255, 255);
             width:200px;
-            height:350px;
-            display:block;
-            margin:auto;
-            border-radius:10px;
+            height:380px;
+            border-radius:0px 0px 10px 10px;
             text-align: center;
-        }
+    }
+
+    #resumen{
+        background-color:rgb(250, 66, 66) ;
+        border-radius:0px 10px 10px 0px;
+        padding: 10px;
+        text-align: center;
+        color:white;
+        width:30px;
+        height:15px;
+        font-size:12px;
+    }
+
+    #tabla{
+        display:grid;
+        width:200px;
+        height:200px;
+        background-color:rgb(250, 66, 66);
+        padding: 20px;
+        border-radius:0px 10px 10px 0px;
+        grid-area: "0" "1" "2"
+                   "3" "4" "5"
+                   "6" "7" "8"
+                    "" "9" "";
+      
+    }
+
+    #tabla>p {
+        background-color: white;
+        border-radius: 90px;
+        text-align: center;
+        width:30px;
+        height:30px;
+        color:rgb(19, 19, 19);
+    }
+
+    #cierre{
+        background-color: transparent;
+        color:white;
+    }
+
     input{
         margin-bottom: 10px;
     }
@@ -167,34 +211,75 @@
         background-color: rgb(91, 149, 236);
     }
 
+    #operacion{
+        padding: 10px;
+        width:15px;
+        height:15px;
+        border-radius: 90px;
+        color:white;
+        background-color: black ;
+        display:block;
+        margin:auto;
+    }
+
+    #numero2{
+        margin-top:10px;
+    }
+
+   
+
    
 
     </style>
 </head>
 <body>
 
-<h1 id="titulo">Calculator</h1>
+    <h1 id="titulo">Calculator</h1>
 
+    <div id="container">
+ 
+        <div id="calculadora">
+            <input type="number" id="numero1" placeholder="0">
+            <p id="operacion"></p>
+            <input type="number" id="numero2" placeholder="0">
 
-    <div id="calculadora">
-        <input type="number" id="numero1" placeholder="0">
-        <input type="number" id="numero2" placeholder="0">
+            <div id="botones">
+                <button type="button" id="suma" onclick= "operar(1)">+</button>
+                <button type="button" id="resta"onclick= "operar(2)">-</button>
+                <button type="button" id="multiplicacion" onclick="operar(3)">*</button>
+                <button type="button" id="division"onclick= "operar(4)">%</button>
+                <button type="button" id="reset"onclick= "operar(5)">A/C</button>
+                <button type="button" id="igual"onclick= "operar(6)">=</button>
+            </div>
 
-        <div id="botones">
-            <button type="button" id="suma" onclick= "operar(1)">+</button>
-            <button type="button" id="resta"onclick= "operar(2)">-</button>
-            <button type="button" id="multiplicacion" onclick="operar(3)">*</button>
-            <button type="button" id="division"onclick= "operar(4)">%</button>
-            <button type="button" id="reset"onclick= "operar(5)">A/C</button>
-            <button type="button" id="igual"onclick= "operar(6)">=</button>
+            <hr>
+
+            <div id="result">
+                <p>El resultado es:</p>
+                <p id="resultado"></p>
+            </div>
+
         </div>
 
-        <hr>
+        <div id ="numeros">
+            <p id="resumen">1 2 3</p>
 
-        <div id="result">
-            <p>El resultado es:</p>
-            <p id="resultado"></p>
+            <div id="tabla">
+                <p id="cierre">X</p>
+                <p id="0">0</p>
+                <p id="1">1</p>
+                <p id="2">2</p>
+                <p id="3">3</p>
+                <p id="4">4</p>
+                <p id="5">5</p>
+                <p id="6">6</p>
+                <p id="7">7</p>
+                <p id="8">8</p>
+                <p id="9">9</p>
+            </div>
+
         </div>
+  
 
     </div>
  
