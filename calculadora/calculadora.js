@@ -25,14 +25,14 @@ function operar(operacion){
             break;
         case 4:
             result = primernum / segundonum;
-            document.getElementById("operacion").innerHTML= "/";
+            document.getElementById("operacion").innerHTML= "%";
             break;
         case 5:
-            primernum = 0;
-            segundonum = 0;
+            document.getElementById("numero1").innerHTML= 0;
+            document.getElementById("numero2").innerHTML= 0;
             break;
         case 6:
-            document.getElementById("resultado").innerHTML= result; 
+            document.getElementById("resultado").innerHTML= result;
             break;
     }
 
