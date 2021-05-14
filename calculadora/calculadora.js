@@ -28,8 +28,10 @@ function operar(operacion){
             document.getElementById("operacion").innerHTML= "%";
             break;
         case 5:
-            document.getElementById("numero1").innerHTML= 0;
-            document.getElementById("numero2").innerHTML= 0;
+            document.getElementById("numero1").value = 0;
+            document.getElementById("numero2").value = 0;
+            document.getElementById("resultado").innerHTML = "";
+            document.getElementById("operacion").innerHTML= "";
             break;
         case 6:
             document.getElementById("resultado").innerHTML= result;
@@ -39,4 +41,14 @@ function operar(operacion){
     
 }
 
+function introducirNumeros(valor){
+
+    document.getElementById("numero1").value = valor;
+
+
+    for(var i; i<=0; i++){
+        return valor += i;
+    }
+
+}
 

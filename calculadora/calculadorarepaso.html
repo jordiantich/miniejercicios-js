@@ -128,6 +128,20 @@
         box-shadow: 0px 0px 6px 1px;
     }
 
+    #nums button:hover{
+        display:block;
+        background-color: white;
+        border-radius: 90px;
+        border: transparent;
+        width:40px;
+        height:40px;
+        color:rgb(250, 66, 66);
+        margin:auto auto 10px auto;
+        padding:5px;
+        font-weight: bold;
+       
+    }
+
     #cierre{
         background-color: transparent;
         color:white;
@@ -137,8 +151,21 @@
         text-align: center;
     }
 
+    #cierre:hover{
+        background-color: transparent;
+        color:rgb(26, 26, 26);
+        border-bottom: solid 2px rgb(24, 24, 24);
+        width:20px;
+        margin-bottom:20px;
+        text-align: center;
+    }
+
     input{
         margin-bottom: 10px;
+    }
+
+    input::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
+        -webkit-appearance: none;
     }
 
     #botones{
@@ -258,7 +285,6 @@
          border-bottom: 2px;
          width:190px;
          height:0px;
-         
      }
 
     </style>
@@ -305,18 +331,18 @@
             <div id="tabla">
                 <p id="cierre">X</p>
                 <div id="nums">
-                        <button id="0">0</button>
-                        <button id="1">1</button>
-                        <button id="2">2</button>
-                        <button id="3">3</button>
-                        <button id="4">4</button>
-                        <button id="5">5</button>
-                        <button id="6">6</button>
-                        <button id="7">7</button>
-                        <button id="8">8</button>
-                        <button id="9">9</button>
-                        <button id="coma">,</button>
-                        <button id="punto">.</button>
+                        <button type="button" id="0" onclick ="introducirNumeros(0)" onclick ="introducirNumeros2(0)">0</button>
+                        <button type="button" id="1" onclick ="introducirNumeros(1)" onclick ="introducirNumeros(1)">1</button>
+                        <button type="button" id="2" onclick ="introducirNumeros(2)">2</button>
+                        <button type="button" id="3" onclick ="introducirNumeros(3)">3</button>
+                        <button type="button" id="4" onclick ="introducirNumeros(4)">4</button>
+                        <button type="button" id="5" onclick ="introducirNumeros(5)">5</button>
+                        <button type="button" id="6" onclick ="introducirNumeros(6)">6</button>
+                        <button type="button" id="7" onclick ="introducirNumeros(7)">7</button>
+                        <button type="button" id="8" onclick ="introducirNumeros(8)">8</button>
+                        <button type="button" id="9" onclick ="introducirNumeros(9)">9</button>
+                        <button type="button" id="coma" onclick ="introducirNumeros()">,</button>
+                        <button type="button" id="punto" onclick ="introducirNumeros(12)">.</button>
                 </div>  
             </div>
 
