@@ -18,5 +18,17 @@
       "email": "dsebastien@gmail.com",
       "id": 4
     }
+  ],
+  "clients":[
+    {
+      "id":1,
+      "name":"paquito",
+      "lastname":"sanchez"
+    },
+    {
+      "id":2,
+      "name":"Ruben",
+      "lastname":"Nilo"
+    }
   ]
 }
