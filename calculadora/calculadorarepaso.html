@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    
+    <style>
+    /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed, 
+    figure, figcaption, footer, header, hgroup, 
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+    	margin: 0;
+    	padding: 0;
+    	border: 0;
+    	font-size: 100%;
+    	font: inherit;
+    	vertical-align: baseline;
+    }
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure, 
+    footer, header, hgroup, menu, nav, section {
+    	display: block;
+    }
+    body {
+    	line-height: 1;
+    }
+    ol, ul {
+    	list-style: none;
+    }
+    blockquote, q {
+    	quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+    	content: '';
+    	content: none;
+    }
+    table {
+    	border-collapse: collapse;
+    	border-spacing: 0;
+    }
+    
+    body{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        background-color: black;
+    }
+
+    
+
+    #titulo{
+        margin-bottom:50px;
+        box-shadow: 0px 1px 8px rgba(226, 226, 226, 0.6);
+        width:100%;
+        font-size: 45px;
+        padding:20px;
+        color:white;
+        text-transform: uppercase;
+    }
+
+    #container{
+        display:flex;
+        justify-content: center;  
+    }
+
+    #calculadora{
+            padding:20px;
+            background-color: rgb(255, 255, 255);
+            width:200px;
+            height:380px;
+            border-radius:0px 0px 20px 20px;
+            text-align: center;
+            z-index: 1;
+            box-shadow: 2px 0px 10px 1px rgb(20, 20, 20, 0.6);
+    }
+
+    #resumen{
+        background-color:rgb(250, 66, 66) ;
+        border-radius:0px 20px 20px 0px;
+        padding: 10px;
+        text-align: center;
+        color:white;
+        width:30px;
+        height:15px;
+        font-size:12px;
+    }
+
+    #tabla{
+        width:180px;
+        height:250px;
+        background-color:rgb(250, 66, 66);
+        padding: 10px 20px;
+        border-radius:0px 10px 10px 0px;
+    }
+
+    #nums{
+        display:grid;
+        margin:10px;
+        grid-template-columns: auto auto auto;
+    }
+
+    #nums button{
+        display:block;
+        background-color: transparent;
+        border-radius: 90px;
+        border: transparent;
+        width:40px;
+        height:40px;
+        color:white;
+        margin:auto auto 10px auto;
+        padding:5px;
+        font-weight: bold;
+        box-shadow: 0px 0px 6px 1px;
+    }
+
+    #cierre{
+        background-color: transparent;
+        color:white;
+        border-bottom: solid 2px white;
+        width:20px;
+        margin-bottom:20px;
+        text-align: center;
+    }
+
+    input{
+        margin-bottom: 10px;
+    }
+
+    #botones{
+        margin:auto;
+        width:150px;
+        height:150px;
+        display:grid;
+        padding:10px;
+    }
+
+    #suma{
+        margin-right:10px;
+        grid-column: 1/2;
+        grid-row:1/2;
+        border-radius: 90px;
+        background-color: rgb(250, 66, 66);
+        color:white;
+        border: 0px;
+    }
+    #resta{
+        grid-column: 2/3;
+        grid-row:1/2;
+        border-radius: 90px;
+        background-color: rgb(250, 66, 66);
+        color:white;
+        border: 0px;
+    }
+    #multiplicacion{
+        margin-top: 10px;
+        margin-right:10px;
+        grid-column: 1/2;
+        grid-row:2/3;
+        border-radius: 90px;
+        background-color: rgb(250, 66, 66);
+        color:white;
+        border: 0px;
+    }
+    #division{
+        margin-top:10px;
+        grid-column: 2/3;
+        grid-row:2/3;
+        border-radius: 90px;
+        background-color: rgb(250, 66, 66);
+        color:white;
+        border: 0px;
+    }
+    #reset{
+        margin-top:10px;
+        margin-right:10px;
+        grid-column: 1/2;
+        grid-row:3/4;
+        border-radius: 90px;
+        background-color: rgb(250, 66, 66);
+        color:white;
+        border: 0px;
+    }
+    #igual{
+        margin-top:10px;
+        grid-column: 2/3;
+        grid-row:3/4;
+        border-radius: 90px;
+        background-color: rgb(250, 66, 66);
+        color:white;
+        border: 0px;
+    }
+
+    .igualready{
+        background-color:rgb(91, 149, 236) ;
+    }
+
+    #result{
+        padding-top: 15px;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    #resultado{
+        margin-top:10px;
+        font-size: 25px;
+    }
+
+    #suma:hover, #resta:hover, #division:hover, #multiplicacion:hover, #reset:hover, #igual:hover{
+        background-color: rgb(91, 149, 236);
+    }
+
+    #operacion{
+        padding: 10px;
+        width:15px;
+        height:15px;
+        border-radius: 90px;
+        border: solid black 2px;
+        color:black;
+        background-color: transparent;
+        display:block;
+        margin:auto;
+    }
+
+    #numero2{
+        margin-top:10px;
+    }
+
+    #math{
+        display:grid;
+        grid-template-columns: auto auto auto;
+    }
+
+     #math hr{
+         border: solid black;
+         border-bottom: 2px;
+         width:70px;
+         height:0px;
+         margin-top:18px;
+     }
+
+     hr{
+         border: dashed black;
+         border-bottom: 2px;
+         width:190px;
+         height:0px;
+         
+     }
+
+    </style>
+
+
+
+</head>
+<body>
+
+    <h1 id="titulo">Calculator</h1>
+
+    <div id="container">
+ 
+        <div id="calculadora">
+            <input type="number" id="numero1" placeholder="0">
+            <div id="math">
+                <hr>
+                <p id="operacion"></p>
+                <hr>
+            </div>
+            <input type="number" id="numero2" placeholder="0">
+
+            <div id="botones">
+                <button type="button" id="suma" onclick= "operar(1)">+</button>
+                <button type="button" id="resta"onclick= "operar(2)">-</button>
+                <button type="button" id="multiplicacion" onclick="operar(3)">*</button>
+                <button type="button" id="division" onclick= "operar(4)">%</button>
+                <button type="button" id="reset"  onclick= "operar(5)">A/C</button>
+                <button type="button" id="igual" class="igualready" onclick= "operar(6)">=</button>
+            </div>
+
+            <hr>
+
+            <div id="result">
+                <p>=</p>
+                <p id="resultado"></p>
+            </div>
+
+        </div>
+
+        <div id ="numeros">
+            <p id="resumen">1 2 3</p>
+
+            <div id="tabla">
+                <p id="cierre">X</p>
+                <div id="nums">
+                        <button id="0">0</button>
+                        <button id="1">1</button>
+                        <button id="2">2</button>
+                        <button id="3">3</button>
+                        <button id="4">4</button>
+                        <button id="5">5</button>
+                        <button id="6">6</button>
+                        <button id="7">7</button>
+                        <button id="8">8</button>
+                        <button id="9">9</button>
+                        <button id="coma">,</button>
+                        <button id="punto">.</button>
+                </div>  
+            </div>
+
+        </div>
+  
+
+    </div>
+ 
+
+    <script src="calculadora.js"></script>
+</body>
+</html>
