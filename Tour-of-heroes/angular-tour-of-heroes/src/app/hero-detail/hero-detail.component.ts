@@ -13,7 +13,7 @@ import { Subscriber } from 'rxjs';
 })
 export class HeroDetailComponent implements OnInit {
 
-  hero:Hero | any;
+  hero?:Hero;
 
 
   constructor(private route:ActivatedRoute,

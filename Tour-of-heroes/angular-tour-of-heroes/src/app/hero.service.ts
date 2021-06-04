@@ -13,23 +13,22 @@ export class HeroService {
 
   constructor(private messageService:MessageService) {}
 
-  getHeroes():Observable<Hero[]>{
+  getHeroes():Observable<any[]>{
     this.messageService.add(`HeroService:Fetched Heroes`);
     return of(HEROES);
   }
 
-  getHero(id:any):Observable<Hero>{
+  getHero(id:any):Observable<any>{
     this.messageService.add(`HeroService:Fetched with id:${id}`);
-    let heroi:Hero;
+    let heroi = HEROES.find(hero => hero.id === id);
     /*HEROES.forEach(hero => {
       if (id == hero.id){
       heroi = hero;
     }
     })*/
 
-    heroi = HEROES.find(hero => hero.id === id)
-    
-    return heroi;
+    return of(heroi);
+
     }
 
 }
